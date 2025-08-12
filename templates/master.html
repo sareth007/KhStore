@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fashion Store </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/image/img.png" type="image/x-icon">
+</head>
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+<div class="container-fluid p-0 m-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><link rel="icon"type="image/x-icon">Fashion Store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if request.path == '/' %}active{% endif %}">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item {% if request.path.startswith('/product') %}active{% endif %}">
+                    <a class="nav-link" href="/product">Product</a>
+                </li>
+                   <li class="nav-item dropdown {% if request.path.startswith('/Category') %}active{% endif %}">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCountry" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Category
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownCountry">
+                            <a class="dropdown-item" href="/Category/gaming">Gaming</a>
+                            <a class="dropdown-item" href="/Category/audio">Audio</a>
+                            <a class="dropdown-item" href="/Category/mobile">Mmobile</a>
+                            <a class="dropdown-item" href="/Category/tv">TV</a>
+                        </div>
+                   </li>
+                <li class="nav-item {% if request.path.startswith('/contact') %}active{% endif %}">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <li class="nav-item {% if request.path.startswith('/about_login') %}active{% endif %}">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <a
+                        href="/cart"
+                        class="btn btn-outline-success my-2 my-sm-0"
+                        type="button"
+                        id="cart"
+                >
+                    Cart(2)
+                </a>
+            </form>
+        </div>
+    </nav>
+</div>
+{% block content %}{% endblock %}
+<footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container text-md-left">
+        <div class="row text-md-left">
+            <!-- Brand/Logo -->
+            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold text-warning">ShopBrand</h5>
+                <p>
+                    Your one-stop online shop for the best deals and latest trends. Shop with confidence!
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Quick Links</h5>
+                <p><a href="/" class="text-white" style="text-decoration: none;">Home</a></p>
+                <p><a href="/product" class="text-white" style="text-decoration: none;">Shop</a></p>
+                <p><a href="/about" class="text-white" style="text-decoration: none;">About Us</a></p>
+                <p><a href="/contact" class="text-white" style="text-decoration: none;">Contact</a></p>
+            </div>
+
+            <!-- Customer Service -->
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Customer Service</h5>
+                <p><a href="#" class="text-white" style="text-decoration: none;">FAQ</a></p>
+                <p><a href="#" class="text-white" style="text-decoration: none;">Shipping</a></p>
+                <p><a href="#" class="text-white" style="text-decoration: none;">Returns</a></p>
+                <p><a href="#" class="text-white" style="text-decoration: none;">Order Status</a></p>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                <h5 class="text-uppercase mb-4 font-weight-bold">Contact</h5>
+                <p><i class="fa fa-home mr-3"></i> Phnom Penh, Cambodia</p>
+                <p><i class="fa fa-envelope mr-3"></i> KhStore168@info.com</p>
+                <p><i class="fa fa-phone mr-3"></i> +855 88 620 0002</p>
+                <div>
+                    <a href="#" class="text-white mr-3"><i class="fa fa-facebook-official fa-lg"></i></a>
+                    <a href="#" class="text-white mr-3"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white mr-3"><i class="fa fa-instagram fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="mb-4">
+        <div class="row align-items-center">
+            <div class="col-md-7 col-lg-8 ">
+                <p>© 2025 <span class="text-warning font-weight-bold">Fashion Store</span> | All Rights Reserved.</p>
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <div class="text-center text-md-right">
+                    <a href="#" class="text-white mr-2"><i class="fa fa-cc-visa fa-lg"></i></a>
+                    <a href="#" class="text-white mr-2"><i class="fa fa-cc-mastercard fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fa fa-cc-paypal fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    let cart_list = JSON.parse(localStorage.getItem('cart_list') ?? '[]')
+    let btn_add_to_cart = document.querySelectorAll('.btn_add_to_cart')
+    let cart = document.getElementById('cart')
+
+    let cart_list_tbody = document.getElementById('cart_list_tbody')
+
+    let label_total_usd = document.getElementById('label_total_usd')
+    let label_total_khr = document.getElementById('label_total_khr')
+
+    cart.innerText = `Cart(${cart_list.length})`
+    btn_add_to_cart.forEach(item => {
+        item.addEventListener('click', function () {
+            let dpl_index = cart_list.findIndex(cart_item => cart_item.title === this.getAttribute('data-title'))
+            if (dpl_index > -1) {
+                cart_list[dpl_index].qty += 1
+            } else {
+                cart_list.push(
+                    {
+                        'id': this.getAttribute('data-id'),
+                        'title': this.getAttribute('data-title'),
+                        'qty': 1,
+                        'price': this.getAttribute('data-price'),
+                        'image': this.getAttribute('data-image'),
+                    }
+                )
+            }
+            localStorage.setItem('cart_list', JSON.stringify(cart_list))
+            cart.innerText = `Cart(${cart_list.length})`
+            Swal.fire({
+                position: "top-start",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        })
+    })
+
+    renderCartList()
+    total()
+
+    function renderCartList() {
+        let string_tr = ''
+        cart_list_tbody.innerHTML = ''
+        cart_list.forEach((item, index) => {
+            string_tr += `      <tr>
+                                <td style="width:80px">
+                                    <img src="${item.image}" class="img-fluid rounded" alt="Product 1">
+                                </td>
+                                <td style="width: 120px">
+                                    <h6 class="mb-0">${item.title}</h6>
+                                </td>
+                                <td>$${item.price}</td>
+                                <td>
+                                   <span class="btn  btn-sm btn-danger" onclick="removeQty(${index})">-</span>
+                                   <strong>${item.qty}</strong>
+                                   <span class="btn btn-sm btn-primary" onclick="addQty(${index})">+</span>
+                                </td>
+                                <td>$${item.qty * item.price}</td>
+                                <td>
+                                    <button onclick="removeCartItem(${index})" class="btn btn-sm btn-danger">X</button>
+                                </td>
+                            </tr>`
+        })
+        cart_list_tbody.innerHTML = string_tr
+    }
+
+    function removeCartItem(index) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "Do you want to remove this item",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, remove it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                cart_list.splice(index, 1)
+                localStorage.setItem('cart_list', JSON.stringify(cart_list))
+                renderCartList()
+
+            }
+        });
+    }
+
+    function total() {
+        let total_usd = 0
+        let total_khr = 0
+        cart_list.forEach(item => {
+            total_usd += (parseFloat(item.qty) * parseFloat(item.price))
+        })
+        total_khr = total_usd * 4100
+        total_khr = Math.ceil(total_khr / 100) * 100
+
+        label_total_usd.innerText = `$${total_usd.toFixed(2)}`
+        label_total_khr.innerText = `៛${total_khr.toLocaleString()}`
+    }
+
+    function addQty(index) {
+        cart_list[index].qty++
+        localStorage.setItem('cart_list', JSON.stringify(cart_list))
+        renderCartList()
+        total()
+    }
+
+    function removeQty(index) {
+        if (cart_list[index].qty <= 1) {
+            removeCartItem(index)
+        } else {
+            cart_list[index].qty--
+        }
+        localStorage.setItem('cart_list', JSON.stringify(cart_list))
+        renderCartList()
+        total()
+    }
+</script>
+</body>
+</html>

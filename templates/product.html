@@ -1,0 +1,45 @@
+{% extends 'master.html' %}
+
+{% block content %}
+    <div class="container mt-2">
+        <div class="row">
+            {% for item in products %}
+                <div class="col-md-3 col-sm-12 mb-2">
+                    <div class="card">
+                        <div class="product-image">
+                            <img src="{{ item['image'] }}"
+                                 style="height: 200px; object-fit: contain"
+                                 class="card-img-top" alt="Product Image">
+                            <div class="discount-badge">{{ item['category'] }}</div>
+                            <div class="brand-vertical">KR STORE</div>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="mb-1">
+                                <span class="price">$ {{ item['price'] }}</span>
+                            </p>
+                            <p class="product-title mb-0">{{ item['title'] }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ url_for('product_detail', id=item['id']) }}"
+                               class="btn btn-sm btn-outline-secondary w-100 mb-1">
+                                View
+                            </a>
+
+                            <input
+                                type="button"
+                                class="btn btn-sm btn-outline-primary w-100 btn_add_to_cart"
+                                value="Add To Cart"
+                                data-id="{{ item['id'] }}"
+                                data-title="{{ item['title'] }}"
+                                data-image="{{ item['image'] }}"
+                                data-price="{{ item['price'] }}"
+                            >
+                        </div>
+
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

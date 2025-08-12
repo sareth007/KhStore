@@ -1,0 +1,52 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row align-items-center">
+    <!-- LEFT CONTENT -->
+    <div class="col-md-6 mb-4 mb-md-0">
+      <h2 class="mb-3">About Our Company</h2>
+      <p class="lead text-muted">
+        We are committed to delivering high-quality products and exceptional customer service.
+        Our team works tirelessly to innovate and meet the needs of our customers worldwide.
+        Founded in 2010, we have grown into a trusted brand known for reliability and excellence.
+      </p>
+      <button class="btn btn-primary px-4 py-2 rounded-pill">
+        Learn More
+      </button>
+    </div>
+
+    <!-- RIGHT PHOTOS -->
+    <div class="col-md-6">
+      <div class="row g-4"> <!-- Increased gap here -->
+        <!-- Big Photo -->
+        <div class="col-12">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
+            alt="Main About Us Photo"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+        <!-- Two Smaller Photos -->
+        <div class="col-6 mt-2">
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80"
+            alt="About Us 2"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+        <div class="col-6 mt-2">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
+            alt="About Us 3"
+            class="img-fluid rounded shadow"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS Bundle CDN -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}
