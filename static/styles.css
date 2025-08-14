@@ -120,3 +120,393 @@ textarea {
     border-radius: 0 !important;
 }
 
+/* Add to existing Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  /* Product Grid - 2 cards per row */
+  .col-product {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  /* Ensure proper spacing between cards */
+  .row {
+    margin-right: -8px;
+    margin-left: -8px;
+  }
+
+  .col-product {
+    padding-right: 8px;
+    padding-left: 8px;
+    margin-bottom: 16px;
+  }
+}
+
+/* Very Small Phones - 1 card per row */
+@media (max-width: 400px) {
+  .col-product {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/*!*button view*!*/
+/*!* Modern Button Styling *!*/
+/*.btn-modern {*/
+/*    display: inline-flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*    padding: 8px 16px;*/
+/*    font-size: 14px;*/
+/*    font-weight: 500;*/
+/*    text-decoration: none;*/
+/*    text-transform: uppercase;*/
+/*    letter-spacing: 0.5px;*/
+/*    color: #333;*/
+/*    background-color: transparent;*/
+/*    border: 2px solid #333;*/
+/*    border-radius: 8px;*/
+/*    transition: all 0.3s ease;*/
+/*    width: 100%;*/
+/*    margin-bottom: 8px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*!* Hover Effect *!*/
+/*.btn-modern:hover {*/
+/*    background-color: #333;*/
+/*    color: #fff;*/
+/*    border-color: #333;*/
+/*    transform: translateY(-2px);*/
+/*    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);*/
+/*}*/
+
+/*!* Active/Click Effect *!*/
+/*.btn-modern:active {*/
+/*    transform: translateY(0);*/
+/*    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*!* Focus State for Accessibility *!*/
+/*.btn-modern:focus {*/
+/*    outline: none;*/
+/*    box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.2);*/
+/*}*/
+
+/*!* Disabled State *!*/
+/*.btn-modern:disabled {*/
+/*    opacity: 0.6;*/
+/*    cursor: not-allowed;*/
+/*    transform: none;*/
+/*    box-shadow: none;*/
+/*}*/
+
+/* Modern Product Card Styling */
+.card {
+    background-color: #fff;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Product Image Container */
+.product-image {
+    position: relative;
+    overflow: hidden;
+    background-color: #f8fafc;
+    padding: 20px;
+}
+
+/* Product Image */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+/* Discount Badge (Category) */
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Brand Vertical Text */
+.brand-vertical {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #10b981;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-align: center;
+}
+
+/* Card Body */
+.card-body {
+    padding: 16px;
+    background-color: #fff;
+}
+
+/* Product Title */
+.product-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Price */
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #059669;
+}
+
+/* Card Footer */
+.card-footer {
+    background-color: #fff;
+    border-top: none;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Button Styling (Refined to match card aesthetic) */
+.btn-modern {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #1f2937;
+    background-color: transparent;
+    border: 2px solid #1f2937;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-modern:hover {
+    background-color: #1f2937;
+    color: #fff;
+    border-color: #1f2937;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-modern:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-modern:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(31, 41, 55, 0.2);
+}
+
+.btn-modern:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .card {
+        border-radius: 10px;
+    }
+
+    .product-title {
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .btn-modern {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/*silder*/
+/* Modern Carousel Styling */
+.carousel-inner {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel Item */
+.carousel-item {
+    position: relative;
+    transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    filter: brightness(0.9); /* Slight dim for text contrast */
+    transition: filter 0.3s ease;
+}
+
+.carousel-item:hover img {
+    filter: brightness(1); /* Brighten on hover */
+}
+
+/* Caption Styling */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for readability */
+    border-radius: 8px;
+    padding: 20px;
+    bottom: 20px;
+    transform: translateY(0);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.carousel-caption h5 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #f1f1f1;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Caption Animation on Hover */
+.carousel-item:hover .carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-10px);
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    background: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 20px;
+    background-size: 50% 50%;
+}
+
+/* Indicators */
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #6b7280;
+    border: none;
+    margin: 0 6px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #10b981;
+    transform: scale(1.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px; /* Smaller height for mobile */
+    }
+
+    .carousel-caption {
+        display: block !important; /* Ensure captions are visible on mobile */
+        padding: 12px;
+        bottom: 10px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 18px;
+    }
+
+    .carousel-caption p {
+        font-size: 14px;
+    }
+
+    .carousel-indicators {
+        bottom: -40px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-inner {
+        border-radius: 10px;
+    }
+
+    .carousel-item img {
+        height: 200px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 16px;
+    }
+
+    .carousel-caption p {
+        font-size: 12px;
+    }
+}

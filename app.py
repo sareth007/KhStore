@@ -7,7 +7,7 @@ app = Flask(__name__)
 app.config.from_object('config')
 mail = Mail(app)
 
-products = [
+products =[
     {
       "id": 1,
       "title": "Sony WH-1000XM3 Bluetooth Wireless Over Ear Headphones with Mic (Silver)",
@@ -609,6 +609,7 @@ products = [
       }
     }
   ]
+
 
 @app.get('/')
 @app.get('/home')

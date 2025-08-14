@@ -1,52 +1,345 @@
 {% extends 'master.html' %}
 
 {% block content %}
-<div class="container my-5">
-  <div class="row align-items-center">
-    <!-- LEFT CONTENT -->
-    <div class="col-md-6 mb-4 mb-md-0">
-      <h2 class="mb-3">About Our Company</h2>
-      <p class="lead text-muted">
-        We are committed to delivering high-quality products and exceptional customer service.
-        Our team works tirelessly to innovate and meet the needs of our customers worldwide.
-        Founded in 2010, we have grown into a trusted brand known for reliability and excellence.
-      </p>
-      <button class="btn btn-primary px-4 py-2 rounded-pill">
-        Learn More
-      </button>
-    </div>
-
-    <!-- RIGHT PHOTOS -->
-    <div class="col-md-6">
-      <div class="row g-4"> <!-- Increased gap here -->
-        <!-- Big Photo -->
-        <div class="col-12">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80"
-            alt="Main About Us Photo"
-            class="img-fluid rounded shadow"
-          />
+<!-- Hero Section -->
+<div class="hero-section bg-dark text-white py-5 mb-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="display-4 fw-bold mb-4">
+          <span class="text-gradient">Premium Tech</span><br>
+          For Modern Life
+        </h1>
+        <p class="lead mb-4">
+          Discover cutting-edge gaming gear, stunning displays, immersive audio, and the latest mobile technology.
+          Elevate your digital experience with our curated collection of premium products.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+         <a href="/" class="btn btn-primary btn-lg px-4 py-3 rounded-pill text-decoration-none">
+  <i class="fas fa-shopping-cart me-2"></i>Shop Now
+</a>
+          <button class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill">
+            <i class="fas fa-play me-2"></i>Watch Demo
+          </button>
         </div>
-        <!-- Two Smaller Photos -->
-        <div class="col-6 mt-2">
-          <img
-            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=400&q=80"
-            alt="About Us 2"
-            class="img-fluid rounded shadow"
-          />
-        </div>
-        <div class="col-6 mt-2">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
-            alt="About Us 3"
-            class="img-fluid rounded shadow"
-          />
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-image-grid">
+          <div class="floating-card">
+            <img src="https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=600&q=80"
+                 alt="Gaming Setup" class="img-fluid rounded-4 shadow-lg">
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- Product Categories -->
+<div class="container my-5">
+  <div class="text-center mb-5">
+    <h2 class="display-5 fw-bold mb-3">Our Product Categories</h2>
+    <p class="lead text-muted">Explore our premium collection across four major categories</p>
+  </div>
+
+  <div class="row g-4">
+    <!-- Gaming Category -->
+    <div class="col-lg-6 col-md-6">
+      <div class="category-card h-100 position-relative overflow-hidden rounded-4 shadow-lg">
+        <div class="category-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80"
+             alt="Gaming Products" class="category-bg">
+        <div class="category-content p-4">
+          <div class="category-icon mb-3">
+            <i class="fas fa-gamepad fa-3x text-primary"></i>
+          </div>
+          <h3 class="h2 fw-bold text-white mb-3">Gaming</h3>
+          <p class="text-white-50 mb-4">High-performance gaming laptops, mechanical keyboards, gaming mice, and professional headsets for the ultimate gaming experience.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary fs-6 px-3 py-2 rounded-pill">50+ Products</span>
+            <button class="btn btn-outline-light rounded-pill px-4" onclick="window.location.href='/Category/gaming'">Explore Gaming</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TV Category -->
+    <div class="col-lg-6 col-md-6">
+      <div class="category-card h-100 position-relative overflow-hidden rounded-4 shadow-lg">
+        <div class="category-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80"
+             alt="TV Products" class="category-bg">
+        <div class="category-content p-4">
+          <div class="category-icon mb-3">
+            <i class="fas fa-tv fa-3x text-success"></i>
+          </div>
+          <h3 class="h2 fw-bold text-white mb-3">Smart TVs</h3>
+          <p class="text-white-50 mb-4">4K OLED displays, smart TVs with streaming capabilities, soundbars, and home theater systems for cinematic experiences.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-success fs-6 px-3 py-2 rounded-pill">30+ Products</span>
+              <button class="btn btn-outline-light rounded-pill px-4" onclick="window.location.href='/Category/tv'">Explore Tvs</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audio Category -->
+    <div class="col-lg-6 col-md-6">
+      <div class="category-card h-100 position-relative overflow-hidden rounded-4 shadow-lg">
+        <div class="category-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80"
+             alt="Audio Products" class="category-bg">
+        <div class="category-content p-4">
+          <div class="category-icon mb-3">
+            <i class="fas fa-headphones fa-3x text-warning"></i>
+          </div>
+          <h3 class="h2 fw-bold text-white mb-3">Audio</h3>
+          <p class="text-white-50 mb-4">Premium headphones, wireless earbuds, studio monitors, and portable speakers with crystal-clear sound quality.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-warning fs-6 px-3 py-2 rounded-pill">40+ Products</span>
+              <button class="btn btn-outline-light rounded-pill px-4" onclick="window.location.href='/Category/audio'">Explore Audio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Category -->
+    <div class="col-lg-6 col-md-6">
+      <div class="category-card h-100 position-relative overflow-hidden rounded-4 shadow-lg">
+        <div class="category-overlay"></div>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80"
+             alt="Mobile Products" class="category-bg">
+        <div class="category-content p-4">
+          <div class="category-icon mb-3">
+            <i class="fas fa-mobile-alt fa-3x text-info"></i>
+          </div>
+          <h3 class="h2 fw-bold text-white mb-3">Mobile</h3>
+          <p class="text-white-50 mb-4">Latest smartphones, tablets, wireless chargers, and premium cases from top brands worldwide.</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-info fs-6 px-3 py-2 rounded-pill">60+ Products</span>
+              <button class="btn btn-outline-light rounded-pill px-4" onclick="window.location.href='/Category/mobile'">Explore Mobile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Call to Action -->
+<div class="bg-primary text-white py-5">
+  <div class="container text-center">
+    <h2 class="display-6 fw-bold mb-3">Ready to Upgrade Your Tech?</h2>
+    <p class="lead mb-4">Join thousands of satisfied customers who trust us for their tech needs</p>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="row text-center mb-4">
+          <div class="col-md-4">
+            <div class="stat-item">
+              <h3 class="display-4 fw-bold">50K+</h3>
+              <p class="mb-0">Happy Customers</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-item">
+              <h3 class="display-4 fw-bold">200+</h3>
+              <p class="mb-0">Premium Products</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="stat-item">
+              <h3 class="display-4 fw-bold">5★</h3>
+              <p class="mb-0">Average Rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <button class="btn btn-light btn-lg px-5 py-3 rounded-pill">
+        <a href="/product" class="text-decoration-none text-dark">
+    <i class="fas fa-store me-2"></i>Browse All Products
+</a>
+      </button>
+      <button class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill">
+        <i class="fas fa-phone me-2"></i>Contact Sales
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* Custom Styles */
+.text-gradient {
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.floating-card {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.category-card {
+  min-height: 400px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.category-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
+  z-index: 2;
+}
+
+.category-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.product-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+.product-image img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.stat-item {
+  padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+
+  .category-card {
+    min-height: 300px;
+  }
+
+  .d-flex.gap-3 {
+    gap: 1rem !important;
+  }
+}
+</style>
+
 <!-- Bootstrap JS Bundle CDN -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<script>
+// Add some interactive features
+document.querySelectorAll('.category-card').forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-10px) scale(1.02)';
+  });
+
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1)';
+  });
+});
+
+// Smooth scroll for buttons (if needed)
+document.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', function(e) {
+    // Add ripple effect
+    const ripple = document.createElement('span');
+    const rect = this.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    ripple.classList.add('ripple');
+
+    this.appendChild(ripple);
+
+    setTimeout(() => {
+      ripple.remove();
+    }, 600);
+  });
+});
+</script>
+
+<style>
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+</style>
 {% endblock %}

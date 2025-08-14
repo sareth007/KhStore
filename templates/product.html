@@ -11,7 +11,7 @@
                                  style="height: 200px; object-fit: contain"
                                  class="card-img-top" alt="Product Image">
                             <div class="discount-badge">{{ item['category'] }}</div>
-                            <div class="brand-vertical">KR STORE</div>
+                            <div class="brand-vertical">KH STORE</div>
                         </div>
                         <div class="card-body text-center">
                             <p class="mb-1">
@@ -21,13 +21,13 @@
                         </div>
                         <div class="card-footer">
                             <a href="{{ url_for('product_detail', id=item['id']) }}"
-                               class="btn btn-sm btn-outline-secondary w-100 mb-1">
+                               class="btn-modern">
                                 View
                             </a>
 
                             <input
                                 type="button"
-                                class="btn btn-sm btn-outline-primary w-100 btn_add_to_cart"
+                                class="btn-modern"
                                 value="Add To Cart"
                                 data-id="{{ item['id'] }}"
                                 data-title="{{ item['title'] }}"
